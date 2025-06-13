@@ -39,24 +39,24 @@
 대소문자를 구분함.
 
 조건문 if
-a = 3
+ex)a = 3
 if a > 1:
   print("a는 1보다큽니다.")
 #인터프리터상 ---의 경우, 아직 입력중인 문장이 끝나지 않음을 의미. (들여써진 상태)
 
 반복문 for
-for a in [1,2,3]
+ex)for a in [1,2,3]
   print(a)
 #for문을 사용하면 실행해야할 문장을 여러번 반복해서 실행할 수 있다. 위 예시는 대괄호에서 수를 꺼내어 a에 하나씩 넣으라는 의미.
 
 반복문 while
-i = 0
+ex)i = 0
   while i < 3
   print(i)
 #while문을 사용하면 "~인 동안"의 뜻에서 알 수 있듯, 일정한 조건이 만족하는 동안 문장을 반복해서 수행한다.
 
 함수 def
-def add(a, b)
+ex)def add(a, b)
   return a + b
 add(3, 4)
 
@@ -77,8 +77,10 @@ add(3, 4)
 -1.숫자형(number)
 숫자 형태로 이루어진 자료형. 정수/실수/8진수/16진수 형이 존재한다.
 
-  1.정수형(integer) 정수를 뜻하는 자료형. 음의정수, 0, 양의정수 로 이루어져있다. ex) -2,-1,0,1,2...
-  2. 실수형(floating-point) 소수점이 포함된 숫자를 의미. ex) 1.2, -1.502 ...
+  1.정수형(integer) 정수를 뜻하는 자료형. 음의정수, 0, 양의정수 로 이루어져있다. 
+  ex) -2,-1,0,1,2...
+  2. 실수형(floating-point) 소수점이 포함된 숫자를 의미. 
+  ex) 1.2, -1.502 ...
   + 컴퓨터식 지수 표현방식 4.24e10 / 4.24E10 등으로 표현. ( 어떤것으로 사용해도 무방.)
   3. 8진수와 16진수 ) 8진수를 만들기 위해서는 0o, o0과 같은 것으로 시작. / 16진수를 만들기 위해서는 0x로 시작하면된다. 간단히 체킹만.
 
@@ -96,15 +98,22 @@ add(3, 4)
 -2 문자열(string)
 
 1.사용방법
-  1.큰따옴표로 양쪽 둘러싸기 ex) "Hello World"
-  2.작은따옴표로 양쪽 둘러싸기 ex) 'Hello World"
-  3.큰따옴표 3개 연속으로 써서 양쪽 둘러싸기 ex) """Life is too short, You need python.""" << 아마도 #과 같은역할?
-  4.작은따옴표 " ex) '''Life is too short, You need python.'''
+  1.큰따옴표로 양쪽 둘러싸기 
+  ex) "Hello World"
+  2.작은따옴표로 양쪽 둘러싸기 
+  ex) 'Hello World"
+  3.큰따옴표 3개 연속으로 써서 양쪽 둘러싸기 
+  ex) """Life is too short, You need python.""" << 아마도 #과 같은역할?
+  4.작은따옴표 " 
+  ex) '''Life is too short, You need python.'''
 
 2.문자열 속 작은 따옴표, 큰따옴표 추가하기
-  1.작은따옴표가 문자열에 들어갈 경우 큰따옴표로 둘러싸기 ex) food = "Python's favorite food is perl"
-  2.큰따움표가 문자열에 들어갈 경우 작은따옴표로 둘러싸기 ex) food = '"Python is very easy." he says.'
-  3.역슬래시를 사용해서 문자열 속에 작은/큰따옴표 포함하기 ex) food = 'Python\'s favorite food is perl' say = "\"Python is very easy.\" he says."
+  1.작은따옴표가 문자열에 들어갈 경우 큰따옴표로 둘러싸기 
+  ex) food = "Python's favorite food is perl"
+  2.큰따움표가 문자열에 들어갈 경우 작은따옴표로 둘러싸기 
+  ex) food = '"Python is very easy." he says.'
+  3.역슬래시를 사용해서 문자열 속에 작은/큰따옴표 포함하기 
+  ex) food = 'Python\'s favorite food is perl' say = "\"Python is very easy.\" he says."
 
 3.여러줄인 문자열 만들기
 
@@ -180,3 +189,33 @@ add(3, 4)
   ex)number- 10
   day = "three"
   "I eat %d apples. so I was sick for %s days." % (number, day)
+
++문자열 포맷코드 %s 문자열 (모든 것을 문자열화. 생각 안해도 문자열로 대입가능) %d 정수(integer) %f 부동소수(floating-point)
+  ++포매팅 연산자 %d와 %를 함께서야하는경우, %%를 사용한다. 단, 포매팅 연산자가 없는 경우 그냥 %를 붙이면 됨.
+
+  -5. 포맷코드와 숫자 함꼐사용하기
+    1. 정렬과 공백이 필요한 경우 
+    %10s는 전체길이가 10개인 문자열 공간에서 대입되는 값을 오른쪽으로 정렬, 그 앞의 나머지는 공백으로 두라는 의미. (앞부분이 공백)
+    %-10s는 왼쪽정렬, 그 뒤의 나머지는 공백으로 두라는 의미. (뒷부분이 공백)
+    2. 소수점 표현하기
+    ex) "%0.4f" % 3.42134234는 소수점 네번째 자리까지만 나타내게되며, '.'은 소수점 포인트, 그 뒤의 숫자는 소수점 뒤에 나올 숫자의 개수를 의미.
+    사용한 숫자0은 수 길이에는 상관하지 않겠다는 의미. (%.4f로 표현해도 가능.)
+    ex2) "%10.4f" %3.42134234은 10이 전체길이를 결정해주고, 우측정렬을 하게끔 만들어주며, .4는 소수점 4자리까지 나타낼 수 있게끔 해줌.
+
+  -6. format함수를 사용한 포매팅 .format
+    1.숫자열 바로 대입하기
+    ex)"I eat {0} apples".format(3) 
+    2.문자열 바로 대입하기
+    ex) "I eat {0} apples".format("five")
+    3.숫자 값을 가진 변수로 대입하기
+    ex)number = 3
+    "I eat {0} apples".format(number)
+    4.2개 이상의 값 넣기, 여기서 0은 .format에 들어가는 함수의 첫번째값, 두번째값을 넣겠다는 의미.
+    ex)number = 10
+    day = "three"
+    "I ate {0} apples. so I was sick for {1} days.".format(number,day)
+    5.이름으로 넣기, 인덱스 항목을 넣는 대신 {name}형태를 사용하여 name=value로 입력값을 정해준 것. 
+    ex)"I ate {number} apples. so I was sick for {day} days.".format(number=10, day=3)
+    6.인덱스와 이름을 혼용해서 넣기
+    ex)"I ate {0} apples. so I was sick for {day} days.".format(10, day=3)
+    
