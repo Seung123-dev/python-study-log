@@ -101,4 +101,65 @@ add(3, 4)
   3.큰따옴표 3개 연속으로 써서 양쪽 둘러싸기 ex) """Life is too short, You need python.""" << 아마도 #과 같은역할?
   4.작은따옴표 " ex) '''Life is too short, You need python.'''
 
-문자열 속 작은 따옴표, 큰따옴표 추가하기
+2.문자열 속 작은 따옴표, 큰따옴표 추가하기
+  1.작은따옴표가 문자열에 들어갈 경우 큰따옴표로 둘러싸기 ex) food = "Python's favorite food is perl"
+  2.큰따움표가 문자열에 들어갈 경우 작은따옴표로 둘러싸기 ex) food = '"Python is very easy." he says.'
+  3.역슬래시를 사용해서 문자열 속에 작은/큰따옴표 포함하기 ex) food = 'Python\'s favorite food is perl' say = "\"Python is very easy.\" he says."
+
+3.여러줄인 문자열 만들기
+
+  1.줄 바꿈을 위한 이스케이프 코드 \n ex) multiline = "Life is too short\nYou need python"
+  +\n은 띄어 쓰지 않는다.
+  2.작은따옴표 3개 / 큰따옴표 3개 사용 
+  ex) multiline = '''
+    life is too short
+    You need python
+    '''
+
++여러가지 이스케이프 코드들 (중요한 것들만.)
+  \n 줄을 바꿀 때
+  \t 탭 각격을 줄 떄
+  \\ \를 그대로 표현할 떄 사용 (정수형과 다름!)
+  \',\" ',"를 그대로 표현할 때 사용
+  추가적인 사항들은 책 본문 54P 참고.
+
+4.문자열 연산
+
+  1.더하기 -> 나열되어 배치
+  ex) head = "Python"
+  tail = " is fun!"
+  print(head+ tail)
+
+  2.곱하기 -> 문자열의 반복
+  ex) a = "Python"
+  print(a * 2)
+
+  3.문자열의 길이 구하기 len 함수 -> len은 length의 약자(길이라는 뜻)으로, len 자체가 값을 출력해주는 파이썬 내장함수.
+  ex) a = "Life is too short"
+  len(a)
+
+  4.인덱싱과 슬라이싱
+  
+  -1.인덱싱(indexing) 가리킨다는 뜻. + 파이썬은 0부터 숫자를 센다. 중요!
+    a[번호]의 사용의 경우 문자열 안의 특정한 값을 뽑아내는 역할을 하는데, 이러한 작업을 인덱싱 한다고 표현. 
+    -가 들어갈 경우 문자열을 뒤에서 부터 읽기 시작하며, a[0]와 a[-0]는 같은 값이기에, 0의 값을 뽑아냄.  즉, a[-1]을 넣으면 가장 문자열 뒷자리부터 셈을 적용.
+    ex)a = "Life is Too short, You need Python"
+    print(a[3])
+    print(a[0])
+    print(a[-1]}
+
+  -2.슬라이싱(slicing) 잘라 낸다는 뜻.
+    특정구간을 뽑아내서 사용하며, 구간을 지정하여 사용한다. 슬라이싱 기법은 범위 지정을 할 경우 끝 번호에 해당하는 문자는 포함하지 않는 다는 점을 반드시 기억.
+    ex) a[0:3]의 경우, 0<=a<3의 구간만을 적용하므로, a[0]~a[2]까지만 출력함.
+    ex2) a = "Life is too short, You need Python"
+    print (a[0:4])
+    까지 해야 Life를 모두 뽑아냄.
+
+  추가적인 활용방법
+  a[시작_번호:끝_번호] 
+  끝번호 부분을 생략하면 시작 번호부터 그 문자열의 끝까지 뽑아냄. ex) a[19:]
+  시작 번호를 생략하면 문자열의 처음부터 끝번호까지 뽑아냄. ex)a[:17]
+  시작 번호와 끝 번호를 생략하면 문자열의 처음부터 끝까지 뽑아냄. ex) a[:]
+  슬라이싱에서도 빼기 기호 사용 가능. ex) a[19:-7] 끝자리 8번쨰까지 의미하므로, a[-7]은 포함하지 않는 a[-8]까지 뽑아냄.
+  
+  
